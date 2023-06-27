@@ -1,0 +1,44 @@
+.headerModal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.cont_titleModal {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.slogan_class {
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    font-family: "Sen", sans-serif;
+}
+.form-text {
+    font-family: "Sen", sans-serif;
+    font-size: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+}
+.btn-rate,
+.btn-claim {
+    background-color: green;
+    width: 100%;
+    padding: 0.5rem 0rem;
+    border-radius: 15px;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-family: "Sen", sans-serif;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.btn-rate:hover {
+    background-color: rgb(4, 90, 4);
+}
+.btn-claim {
+    background-color: brown;
+    width: 100%;
+}
+.btn-claim:hover {
+    background-color: rgb(117, 26, 26);
+}

@@ -1,0 +1,115 @@
+.bg-bot {
+    width: 95%;
+    height: 10%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid black;
+}
+.bg-bot ul {
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #727272;
+    font-size: 20px;
+    font-weight: bold;
+}
+.copyRight {
+    font-family: "Sen", sans-serif;
+    color: black;
+}
+.cont-dropdown {
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
+}
+.form-select-footer {
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    border-radius: 12px;
+    font-size: 18px;
+    font-family: "Sen", sans-serif;
+}
+
+/*!---------------------------------------GOOGLE TRANSLATE  */
+#google_translate_element select {
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    border-radius: 12px;
+    font-size: 18px;
+    font-family: "Sen", sans-serif;
+}
+
+.goog-logo-link,
+.gskiptranslate,
+.goog-te-gadget span,
+.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+div#goog-gt- {
+    display: none !important;
+}
+.goog-te-gadget {
+    color: transparent !important;
+    font-size: 0px;
+}
+
+.goog-text-highlight {
+    background: none !important;
+    box-shadow: none !important;
+}
+
+@media (max-width: 1200px) {
+}
+@media (max-width: 800px) {
+    .bg-bot {
+        width: 90%;
+        height: 8vh;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    .bg-bot ul {
+        width: 100%;
+        padding: 0rem;
+        font-size: 12px;
+    }
+    .cont-dropdown {
+        width: 60%;
+        position: absolute;
+        bottom: 7.5%;
+        right: 1rem;
+    }
+    .form-select-footer {
+        width: 75%;
+        font-size: 15px;
+    }
+    #google_translate_element select {
+        background-color: black;
+        color: white;
+        width: 100%;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        border-radius: 12px;
+        font-size: 15px;
+        font-family: "Sen", sans-serif;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    @media (max-width: 800px) {
+        .cont-dropdown {
+            width: 100%;
+            position: relative;
+            right: 0rem;
+        }
+    }
+}

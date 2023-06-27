@@ -1,0 +1,195 @@
+.cont-global-logistic {
+    padding: 3rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cont-left-logistic {
+    width: 58%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-right-logistic {
+    width: 40%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*!------------------------------------------------LEFT SIDE DETAILS  */
+.cont-chart-logistic {
+    background-color: #9ed2ef;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cont-title-chart-logistic {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+.title-chart-logistic {
+    position: absolute;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: "Sen", sans-serif;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.subCont-chart-logistic {
+    height: 56%;
+    display: flex;
+    justify-content: center;
+}
+
+/*!------------------------------------------------RIGHT SIDE DETAILS  */
+.cont-chart-logistic-product {
+    background-color: #c2ef9e;
+    width: 100%;
+    height: 80%;
+    margin-bottom: 2rem;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.cont-title-chart-product-logistic {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+.title-chart-product-logistic {
+    position: absolute;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: "Sen", sans-serif;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.chart-product-logistic {
+    width: 100%;
+    height: 80%;
+}
+.cont-btn-order-logistic {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: flex-end;
+}
+.btn-order-logistic {
+    width: 100%;
+}
+.btn-show-routes {
+    width: 100%;
+    padding: 0rem;
+    background: #4464d7;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+}
+.btn-show-routes img {
+    width: 15%;
+}
+
+.btn-vector-routes {
+    background: URL("/images/icons/order-vector.svg") no-repeat right;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 25px;
+}
+.btn-vector-routes span {
+    font-size: 20px;
+    font-family: "Sen", sans-serif;
+}
+
+@media (max-width: 1400px) {
+}
+
+@media (max-width: 1200px) {
+    /*!------------------------------------------------GLOBAL DIV  */
+    .cont-global-logistic {
+        padding: 1rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+    }
+    .cont-global-logistic::-webkit-scrollbar {
+        display: none;
+    }
+    .cont-global-logistic {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    /*!------------------------------------------------LEFT SIDE  */
+    .cont-left-logistic {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .title-chart-logistic {
+        font-size: 30px;
+    }
+
+    /*!------------------------------------------------RIGHT SIDE  */
+    .cont-right-logistic {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 1rem;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+    }
+    .cont-chart-logistic-product {
+        margin-top: 1rem;
+    }
+
+    .title-chart-product-logistic {
+        font-size: 30px;
+    }
+
+    /*!------------------------------------------------BUTTON  */
+    .btn-show-routes img {
+        width: 10%;
+    }
+    .btn-vector-routes span {
+        font-size: 22px;
+        font-family: "Sen", sans-serif;
+    }
+}
+@media (max-width: 600px) {
+    /*!------------------------------------------------LEFT SIDE  */
+    .title-chart-logistic {
+        font-size: 25px;
+    }
+
+    /*!------------------------------------------------RIGHT SIDE  */
+    .title-chart-product-logistic {
+        font-size: 25px;
+    }
+
+    /*!------------------------------------------------BUTTON  */
+    .btn-show-routes img {
+        width: 15%;
+    }
+    .btn-vector-routes span {
+        font-size: 18px;
+        font-family: "Sen", sans-serif;
+    }
+}

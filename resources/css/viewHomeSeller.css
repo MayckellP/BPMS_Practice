@@ -1,0 +1,240 @@
+.cont-global-sales {
+    padding: 3rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cont-left-sales {
+    width: 58%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-right-sales {
+    width: 40%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*!------------------------------------------------LEFT SIDE DETAILS  */
+.cont-chart-sales {
+    background-color: #9ed2ef;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}
+.cont-title-chart-sales {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+.title-chart-sales {
+    position: absolute;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: "Sen", sans-serif;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.subCont-chart-sales {
+    height: 56%;
+    display: flex;
+    justify-content: center;
+}
+.cont-performance-goal {
+    width: 100%;
+    height: 34%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0rem 1rem;
+}
+.cont-performance {
+    background-color: #235774;
+    width: 75%;
+    padding: 0.3rem 2rem;
+    border-radius: 10px;
+}
+.cont-performance span {
+    color: white;
+    font-size: 20px;
+    font-family: "Sen", sans-serif;
+}
+.title-performance {
+    font-size: 28px;
+    font-family: "Sen", sans-serif;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.cont-goal {
+    background-color: #32ba50;
+    width: 100%;
+    padding: 0.3rem 2rem;
+    border-radius: 10px;
+}
+.cont-goal span {
+    color: white;
+    font-size: 20px;
+    font-family: "Sen", sans-serif;
+}
+/*!------------------------------------------------RIGHT SIDE DETAILS  */
+.cont-chart-sales-product {
+    background-color: #c2ef9e;
+    width: 100%;
+    height: 80%;
+    margin-bottom: 2rem;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.cont-title-chart-product-sale {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+.title-chart-product-sale {
+    position: absolute;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: "Sen", sans-serif;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.chart-product-sale {
+    width: 100%;
+    height: 80%;
+}
+.cont-btn-order-sale {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: flex-end;
+}
+.btn-order-sale {
+    width: 100%;
+}
+.btn-generate-order {
+    width: 100%;
+    padding: 0rem;
+    background: #4464d7;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+}
+
+.btn-vector-order {
+    background: URL("/images/icons/order-vector.svg") no-repeat right;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 25px;
+}
+.btn-vector-order span {
+    font-size: 25px;
+    font-family: "Sen", sans-serif;
+}
+@media (max-width: 1400px) {
+    .cont-global-sales {
+        padding: 2rem;
+    }
+    .title-chart-product-sale {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .cont-global-sales {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+    }
+    .cont-global-sales::-webkit-scrollbar {
+        display: none;
+    }
+    .cont-global-sales {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .cont-left-sales {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    .title-performance {
+        font-size: 20px;
+    }
+    .cont-performance span {
+        font-size: 18px;
+    }
+    .cont-right-sales {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .cont-btn-order-sale {
+        width: 100%;
+        height: 30%;
+    }
+    .btn-order-sale {
+        width: 100%;
+        height: 100%;
+    }
+    .btn-generate-order {
+        width: 100%;
+        height: 70%;
+    }
+    .btn-vector-order {
+        width: 100%;
+        height: 100%;
+    }
+    .btn-vector-order img {
+        width: 8%;
+        margin: 0.8rem 0rem;
+    }
+    .btn-vector-order span {
+        font-size: 20px;
+    }
+
+    .cont-chart-sales-product {
+        background-color: #c2ef9e;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 2rem;
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .cont-title-chart-product-sale {
+        width: 100%;
+        height: 4.5rem;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+    .title-chart-product-sale {
+        position: relative;
+        font-size: 30px;
+    }
+    .chart-product-sale {
+        width: 100%;
+    }
+}
