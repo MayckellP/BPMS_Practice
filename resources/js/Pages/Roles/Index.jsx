@@ -12,7 +12,7 @@ export default function Index({ auth, roles, permisos }) {
     const showRoles = rolesArray.data.map((item) => (
         <tr key={item.id}>
             <td>{item.name}</td>
-            <td className="text-center">
+            {/* <td className="text-center">
                 {
                     <ButonCreate
                         title="Edit"
@@ -21,7 +21,7 @@ export default function Index({ auth, roles, permisos }) {
                         link={route("roles.edit", item.id)}
                     />
                 }
-            </td>
+            </td> */}
             <td className="text-center">
                 <Link
                     className="text-decoration-none w-75"
@@ -40,8 +40,8 @@ export default function Index({ auth, roles, permisos }) {
         <AuthenticatedLayout user={auth.user} header={"Roles"}>
             <Head title="Roles" />
 
-            <div className="py-12">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div className="p-5">
+                <div className="">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-2 text-gray-900">
                             <ButonCreate
@@ -55,7 +55,7 @@ export default function Index({ auth, roles, permisos }) {
                             <Table striped bordered hover>
                                 <thead>
                                     <tr>
-                                        <th>Role</th>
+                                        <th className="text-center">Role</th>
                                         <th colSpan={2} className="text-center">
                                             Action
                                         </th>

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Dropdown from "@/Components/Dropdown";
 import NavLink from "@/Components/NavLink";
-import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 import { Link } from "@inertiajs/react";
 import ButonCreate from "@/Components/ButtonCreate";
 import Footer from "@/Components/Footer";
@@ -38,6 +37,8 @@ export default function Authenticated({ user, header, children }) {
         window.location.pathname == "/deptSales/create"
     ) {
         background = "bg-view-order";
+    } else if (window.location.pathname == "/support") {
+        background = "bg-view-support";
     } else {
         background = "bg-view";
     }
@@ -47,7 +48,7 @@ export default function Authenticated({ user, header, children }) {
     var identifier = "register";
     var linkHome;
     var linkRegister;
-    var notifyProccess;
+    var notifyProccess = false;
 
     //------------------------- ROLE "CLIENT"
     if (roleName === "Client") {
@@ -155,31 +156,6 @@ export default function Authenticated({ user, header, children }) {
     const closeCart = () => setShow(false);
     const showCart = () => setShow(true);
 
-    useEffect(() => {
-        function lockOrientation() {
-            if (screen.orientation && screen.orientation.lock) {
-                screen.orientation.lock("portrait").catch(function () {
-                    // Error al intentar bloquear la orientación
-                });
-            } else if (screen.lockOrientation) {
-                screen.lockOrientation("portrait").catch(function () {
-                    // Error al intentar bloquear la orientación
-                });
-            }
-        }
-
-        lockOrientation();
-
-        return () => {
-            // Desbloquear la orientación al desmontar el componente si es necesario
-            if (screen.orientation && screen.orientation.unlock) {
-                screen.orientation.unlock();
-            } else if (screen.unlockOrientation) {
-                screen.unlockOrientation();
-            }
-        };
-    }, []);
-
     return (
         <div className="bg-home">
             <div className="side-navbar">
@@ -238,16 +214,18 @@ export default function Authenticated({ user, header, children }) {
                         </li>
 
                         <li>
-                            <NavLink
-                                href={linkRegister}
-                                className="link-navbar"
-                            >
-                                <img
-                                    src="/images/icons/Navbar/register.svg"
-                                    alt="Phrase_Login"
-                                />
-                                Register
-                            </NavLink>
+                            {roleName && roleName !== "Administrador" && (
+                                <NavLink
+                                    href={linkRegister}
+                                    className="link-navbar"
+                                >
+                                    <img
+                                        src="/images/icons/Navbar/register.svg"
+                                        alt="Phrase_Login"
+                                    />
+                                    Register
+                                </NavLink>
+                            )}
                         </li>
                         <li>
                             {roleName === "Client" ? (
@@ -262,44 +240,73 @@ export default function Authenticated({ user, header, children }) {
                                     Track
                                 </NavLink>
                             ) : (
+                                roleName &&
+                                roleName !== "Administrador" && (
+                                    <NavLink
+                                        href={route("chat.index")}
+                                        className="link-navbar"
+                                    >
+                                        {notifyProccess && (
+                                            <div className={notifyProccess}>
+                                                !
+                                            </div>
+                                        )}
+                                        <img
+                                            src="/images/icons/Navbar/chats.svg"
+                                            alt="Phrase_Login"
+                                        />
+                                        Chat
+                                    </NavLink>
+                                )
+                            )}
+                        </li>
+
+                        <li>
+                            {(roleName === "Administrador" ||
+                                user.email === "admin@hotmail.com") && (
                                 <NavLink
-                                    href={route("chat.index")}
+                                    href={route("users.index")}
                                     className="link-navbar"
                                 >
-                                    <div className={notifyProccess}>!</div>
                                     <img
-                                        src="/images/icons/Navbar/chats.svg"
+                                        src="/images/icons/Navbar/users.svg"
                                         alt="Phrase_Login"
                                     />
-                                    Chat
+                                    Users
                                 </NavLink>
                             )}
                         </li>
+
+                        <li>
+                            {(roleName === "Administrador" ||
+                                user.email === "admin@hotmail.com") && (
+                                <NavLink
+                                    href={route("roles.index")}
+                                    className="link-navbar"
+                                >
+                                    <img
+                                        src="/images/icons/Navbar/roles.svg"
+                                        alt="Phrase_Login"
+                                    />
+                                    Roles
+                                </NavLink>
+                            )}
+                        </li>
+
                         <li>
                             <hr className="divider" />
                         </li>
                         <li>
-                            <NavLink href={"#"} className="link-navbar">
+                            <NavLink
+                                href={route("support.index")}
+                                className="link-navbar"
+                            >
                                 <img
                                     src="/images/icons/Navbar/support.svg"
                                     alt="Phrase_Login"
                                 />
                                 Support
                             </NavLink>
-                        </li>
-                        <li>
-                            {roleName === "Administrador" && (
-                                <NavLink
-                                    href={route("users.index")}
-                                    className="link-navbar"
-                                >
-                                    <img
-                                        src="/images/icons/Navbar/track.svg"
-                                        alt="Phrase_Login"
-                                    />
-                                    Users
-                                </NavLink>
-                            )}
                         </li>
                     </ul>
                 </div>

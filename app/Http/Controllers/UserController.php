@@ -57,7 +57,6 @@ class UserController extends Controller
         $employee->user_id = $user->id;
         $employee->name = $user->name;
         $employee->email = $user->email;
-        $employee->foto = $request->foto;
         $employee->area = $request->area;
         $employee->job_position = $request->job_position;
         $employee->address = $request->address;

@@ -22,27 +22,22 @@ function NavbarMobile(props) {
                     className="NavbarMobile"
                 >
                     <Container className="cont-logo-cart">
-                        {(props.roleName === "Client" ||
-                            props.roleName === "Seller" ||
-                            props.roleName === "Production Manager" ||
-                            props.roleName === "Logistic Manager") && (
-                            <Navbar.Brand
-                                href={props.linkHome}
-                                className="cont-img-client-mobile"
-                            >
-                                {props.user.logo === null ? (
-                                    <img
-                                        src="/images/logo_img/Client_logo_default.svg"
-                                        alt="Photo User"
-                                    />
-                                ) : (
-                                    <img
-                                        src={`/images/logo_img/${props.user.logo}`}
-                                        alt="Photo User"
-                                    />
-                                )}
-                            </Navbar.Brand>
-                        )}
+                        <Navbar.Brand
+                            href={props.linkHome}
+                            className="cont-img-client-mobile"
+                        >
+                            {props.user.logo === null ? (
+                                <img
+                                    src="/images/logo_img/Client_logo_default.svg"
+                                    alt="Photo User"
+                                />
+                            ) : (
+                                <img
+                                    src={`/images/logo_img/${props.user.logo}`}
+                                    alt="Photo User"
+                                />
+                            )}
+                        </Navbar.Brand>
                         {(props.roleName === "Client" ||
                             props.roleName === "Seller") && (
                             <Button onClick={handleShow} className="btn-cart">
@@ -85,12 +80,12 @@ function NavbarMobile(props) {
                                                 alt="Photo User"
                                             />
                                         )}
-                                        <Dropdown className="bg-black">
-                                            <Dropdown.Trigger className="bg-black">
-                                                <span className="bg-black">
+                                        <Dropdown>
+                                            <Dropdown.Trigger>
+                                                <span>
                                                     <button
                                                         type="button"
-                                                        className="ms-3 inline-flex items-center px-2 py-2  border-transparent fs-4 leading-4 font-medium rounded-md text-white-500 bg-black hover:text-gray-300 focus:outline-none transition ease-in-out duration-150"
+                                                        className="ms-3 inline-flex items-center px-2 py-2  border-transparent fs-4 leading-4 font-medium rounded-md text-white-500  hover:text-gray-300 focus:outline-none transition ease-in-out duration-150"
                                                     >
                                                         {props.name}
                                                         <svg
@@ -137,7 +132,11 @@ function NavbarMobile(props) {
                                                 props.roleName ===
                                                     "Production Manager" ||
                                                 props.roleName ===
-                                                    "Logistic Manager") && (
+                                                    "Warehouse" ||
+                                                props.roleName ===
+                                                    "Logistic Manager" ||
+                                                props.roleName ===
+                                                    "Logistic Employee") && (
                                                 <NavLink
                                                     href={props.linkHome}
                                                     className="link-navbar"
@@ -170,21 +169,30 @@ function NavbarMobile(props) {
                                         </li>
 
                                         <li>
-                                            <NavLink
-                                                href={props.linkRegister}
-                                                className="link-navbar"
-                                            >
-                                                <img
-                                                    src="/images/icons/Navbar/register.svg"
-                                                    alt="Phrase_Login"
-                                                />
-                                                Register
-                                            </NavLink>
+                                            {props.roleName &&
+                                                props.roleName !==
+                                                    "Administrador" && (
+                                                    <NavLink
+                                                        href={
+                                                            props.linkRegister
+                                                        }
+                                                        className="link-navbar"
+                                                    >
+                                                        <img
+                                                            src="/images/icons/Navbar/register.svg"
+                                                            alt="Phrase_Login"
+                                                        />
+                                                        Register
+                                                    </NavLink>
+                                                )}
                                         </li>
                                         <li>
                                             {props.roleName === "Client" ? (
                                                 <NavLink
-                                                    href={route("track.index")}
+                                                    href={route(
+                                                        "track.show",
+                                                        props.user.id
+                                                    )}
                                                     className="link-navbar"
                                                 >
                                                     <img
@@ -194,22 +202,66 @@ function NavbarMobile(props) {
                                                     Track
                                                 </NavLink>
                                             ) : (
+                                                props.roleName &&
+                                                props.roleName !==
+                                                    "Administrador" && (
+                                                    <NavLink
+                                                        href={route(
+                                                            "chat.index"
+                                                        )}
+                                                        className="link-navbar"
+                                                    >
+                                                        {props.notifyProccess && (
+                                                            <div
+                                                                className={
+                                                                    props.notifyProccess
+                                                                }
+                                                            >
+                                                                !
+                                                            </div>
+                                                        )}
+                                                        <img
+                                                            src="/images/icons/Navbar/chats.svg"
+                                                            alt="Phrase_Login"
+                                                        />
+                                                        Chat
+                                                    </NavLink>
+                                                )
+                                            )}
+                                        </li>
+
+                                        <li>
+                                            {(props.roleName ===
+                                                "Administrador" ||
+                                                props.user.email ===
+                                                    "admin@hotmail.com") && (
                                                 <NavLink
-                                                    href={route("chat.index")}
+                                                    href={route("users.index")}
                                                     className="link-navbar"
                                                 >
-                                                    <div
-                                                        className={
-                                                            props.notifyProccess
-                                                        }
-                                                    >
-                                                        !
-                                                    </div>
                                                     <img
-                                                        src="/images/icons/Navbar/chats.svg"
+                                                        src="/images/icons/Navbar/users.svg"
                                                         alt="Phrase_Login"
                                                     />
-                                                    Chat
+                                                    Users
+                                                </NavLink>
+                                            )}
+                                        </li>
+
+                                        <li>
+                                            {(props.roleName ===
+                                                "Administrador" ||
+                                                props.user.email ===
+                                                    "admin@hotmail.com") && (
+                                                <NavLink
+                                                    href={route("roles.index")}
+                                                    className="link-navbar"
+                                                >
+                                                    <img
+                                                        src="/images/icons/Navbar/roles.svg"
+                                                        alt="Phrase_Login"
+                                                    />
+                                                    Roles
                                                 </NavLink>
                                             )}
                                         </li>

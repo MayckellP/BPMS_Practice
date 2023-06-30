@@ -19,7 +19,10 @@ export default function Dashboard({
         const timer = setTimeout(() => {
             if (roleName === "Client") {
                 window.location.href = route("orders.index");
-            } else if (roleName === "Administrador") {
+            } else if (
+                roleName === "Administrador" ||
+                auth.user.email === "admin@hotmail.com"
+            ) {
                 window.location.href = route("users.index");
             } else if (roleName === "Seller") {
                 window.location.href = route("deptSales.index");
@@ -92,14 +95,7 @@ export default function Dashboard({
     sessionStorage.setItem("myCurrentCart", JSON.stringify(myCart));
     sessionStorage.setItem("proccess", JSON.stringify(proccessTrack));
     return (
-        <AuthenticatedLayout
-            user={auth.user}
-            header={
-                <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    Dashboard
-                </h2>
-            }
-        >
+        <AuthenticatedLayout user={auth.user} header={"Dashboard"}>
             <Head title="Dashboard" />
 
             <div className="py-12">

@@ -14,7 +14,6 @@ export default function Crear({ auth, roles }) {
         password: "",
         password_confirmation: "",
         roles: "",
-        foto: "",
         area: "",
         job_position: "",
         address: "",
@@ -29,10 +28,10 @@ export default function Crear({ auth, roles }) {
         <AuthenticatedLayout user={auth.user} header={"Create users"}>
             <Head title="Users" />
 
-            <div className="py-12">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div className="p-1">
+                <div className="">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-gray-900">
+                        <div className="">
                             <form
                                 onSubmit={submit}
                                 method="post"
@@ -40,7 +39,7 @@ export default function Crear({ auth, roles }) {
                             >
                                 <div className="d-flex">
                                     <div className="w-50 p-3">
-                                        <h3>User Form</h3>
+                                        <h3>New User</h3>
                                         <FloatingLabel
                                             controlId="floatingName"
                                             label="Name"
@@ -141,7 +140,6 @@ export default function Crear({ auth, roles }) {
 
                                         <FloatingLabel
                                             controlId="floatingSelect"
-                                            label="Roles"
                                             className="mb-3"
                                         >
                                             <Form.Select
@@ -155,6 +153,7 @@ export default function Crear({ auth, roles }) {
                                                     )
                                                 }
                                             >
+                                                <option disabled>Role</option>
                                                 {roles.map((item) => (
                                                     <option
                                                         key={item.id}
@@ -167,10 +166,9 @@ export default function Crear({ auth, roles }) {
                                         </FloatingLabel>
                                     </div>
                                     <div className="w-50 p-3 ">
-                                        <h3>Employee's data</h3>
+                                        <h3>Position</h3>
                                         <FloatingLabel
                                             controlId="floatingSelectArea"
-                                            label="Area"
                                             className="mb-3"
                                         >
                                             <Form.Select
@@ -184,6 +182,7 @@ export default function Crear({ auth, roles }) {
                                                     )
                                                 }
                                             >
+                                                <option disabled>Area</option>
                                                 <option
                                                     value={"sales_department"}
                                                 >
@@ -215,7 +214,6 @@ export default function Crear({ auth, roles }) {
 
                                         <FloatingLabel
                                             controlId="floatingSelectArea"
-                                            label="Job position"
                                             className="mb-3"
                                         >
                                             <Form.Select
@@ -229,6 +227,9 @@ export default function Crear({ auth, roles }) {
                                                     )
                                                 }
                                             >
+                                                <option disabled>
+                                                    Job Position
+                                                </option>
                                                 <option value={"supervisor"}>
                                                     Supervisor
                                                 </option>
@@ -237,30 +238,6 @@ export default function Crear({ auth, roles }) {
                                                 </option>
                                             </Form.Select>
                                         </FloatingLabel>
-
-                                        <FloatingLabel
-                                            controlId="floatingFoto"
-                                            label="Foto"
-                                            className="mb-3"
-                                        >
-                                            <Form.Control
-                                                type="text"
-                                                aria-label="Floating label select example"
-                                                className="form-order-input w-100 bg-secondary bg-white border-none text-black rounded-3 py-0"
-                                                value={data.foto}
-                                                onChange={(e) =>
-                                                    setData(
-                                                        "foto",
-                                                        e.target.value
-                                                    )
-                                                }
-                                                required
-                                            />
-                                        </FloatingLabel>
-                                        <InputError
-                                            message={errors.foto}
-                                            className="mt-2"
-                                        />
 
                                         <FloatingLabel
                                             controlId="floatingAddress"
@@ -311,9 +288,12 @@ export default function Crear({ auth, roles }) {
                                         />
                                     </div>
                                 </div>
-                                <div className="w-75 m-auto">
-                                    <Button type="submit" className="mt-2 w-75">
-                                        GENERATE USER
+                                <div className=" w-100 m-auto">
+                                    <Button
+                                        type="submit"
+                                        className="mt-2 w-50 fs-5 bg-success fw-bold border-success"
+                                    >
+                                        Create User
                                     </Button>
                                 </div>
                             </form>

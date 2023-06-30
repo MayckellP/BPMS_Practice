@@ -63,6 +63,7 @@
     border: 1px solid black;
     box-shadow: 4px 4px 5px 1px rgba(0, 0, 0, 0.25);
     font-family: "Sen", sans-serif;
+    font-size: 15px;
     padding-bottom: 1rem;
 }
 
@@ -352,6 +353,14 @@
         100% {
             opacity: 1;
             transform: translateY(0);
+        }
+    }
+}
+@media screen and (orientation: landscape) {
+    @media (max-width: 1200px) {
+        .bg-view-order {
+            width: 100%;
+            min-height: 1000px;
         }
     }
 }

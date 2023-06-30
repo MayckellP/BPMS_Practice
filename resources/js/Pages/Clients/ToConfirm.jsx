@@ -22,6 +22,16 @@ export default function Dashboard({ auth }) {
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900">
                             <h2>Thank you!</h2>
+                            <p>
+                                The administrator will give you access to your
+                                new account.
+                            </p>
+                            <p>
+                                <i>
+                                    Test Mode: Log in as "Administrator" and
+                                    generate the role for your new account.
+                                </i>
+                            </p>
                         </div>
                     </div>
                 </div>

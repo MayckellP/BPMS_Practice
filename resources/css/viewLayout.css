@@ -372,7 +372,7 @@
     @media (max-width: 800px) {
         .bg-view {
             width: 100%;
-            min-height: 700px;
+            min-height: 650px;
         }
         .cont-body-view {
             margin: auto;

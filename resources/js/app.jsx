@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 //CSS
 import "../css/login.css";
 import "../css/viewHome.css";
+import "../css/viewSupport.css";
 import "../css/viewHomeSeller.css";
 import "../css/viewHomeWarehouse.css";
 import "../css/viewHomeProduction.css";
@@ -29,10 +30,10 @@ import { createInertiaApp } from "@inertiajs/react";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 
 const appName =
-    window.document.getElementsByTagName("title")[0]?.innerText || "Laravel";
+    window.document.getElementsByTagName("title")[0]?.innerText || "BPMS";
 
 createInertiaApp({
-    title: (title) => `${title} - ${appName}`,
+    title: (title) => `${title} - BPMS`,
     resolve: (name) =>
         resolvePageComponent(
             `./Pages/${name}.jsx`,

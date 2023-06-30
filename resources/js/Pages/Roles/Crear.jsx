@@ -133,7 +133,7 @@ export default function Crear({ auth, permission }) {
                             />
                         </FloatingLabel>
                         <InputError message={errors.name} className="mt-2" />
-                        <div className="cont-cardRoles row row-cols-1 row-cols-md-2 g-4 pb-4">
+                        <div className="cont-cardRoles row row-cols-1 row-cols-md-2 g-4 pb-4 m-auto">
                             <div
                                 className="cont-department bg-gradient"
                                 style={{ backgroundColor: "darkcyan" }}
@@ -193,13 +193,13 @@ export default function Crear({ auth, permission }) {
                                 </div>
                             </div>
                             <div className="cont-department bg-secondary bg-gradient">
-                                <h4>Warehouse Department</h4>
+                                <h4>Managers</h4>
                                 <div className="d-flex">
                                     <div
                                         className="cont-manager"
                                         onClick={btnRole}
                                     >
-                                        <span>Manager</span>
+                                        <span>Warehouse</span>
                                         <img
                                             id="Warehouse Manager"
                                             src="/images/0.log_view/Manager.svg"
@@ -210,17 +210,17 @@ export default function Crear({ auth, permission }) {
                                         className="cont-employee"
                                         onClick={btnRole}
                                     >
-                                        <span>Employee</span>
+                                        <span>Production</span>
                                         <img
-                                            id="Warehouse Employee"
-                                            src="/images/0.log_view/Employees.svg"
+                                            id="Production Manager"
+                                            src="/images/0.log_view/Manager.svg"
                                             alt="Client_Role"
                                         />
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="cont-department bg-success bg-gradient">
+                            {/*   <div className="cont-department bg-success bg-gradient">
                                 <h4>Production Department</h4>
                                 <div className="d-flex">
                                     <div
@@ -246,7 +246,7 @@ export default function Crear({ auth, permission }) {
                                         />
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
 
                             <div className="cont-department bg-dark bg-gradient">
                                 <h4>Logistic Department</h4>

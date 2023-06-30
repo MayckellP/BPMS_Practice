@@ -68,7 +68,9 @@ export default function UpdateCompanyLogo({ className = "" }) {
 
                 {logo && <img src={logo} className="cont-foto-logo"></img>}
                 <div className="flex items-center gap-4">
-                    <PrimaryButton disabled={processing}>Save</PrimaryButton>
+                    <PrimaryButton className="px-3 py-1" disabled={processing}>
+                        Save
+                    </PrimaryButton>
 
                     <Transition
                         show={recentlySuccessful}

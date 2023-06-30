@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\SupportController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\OrderController;
@@ -59,6 +60,13 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile', [ProfileController::class, 'addImage'])->name('profile.addImage');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+/* Route::get('/support', function(){
+    return Inertia::render('Support');
+})->middleware(['auth']); */
+
+Route::resource('support', SupportController::class)->only('index', 'create', 'store', 'edit', 'update', 'destroy')->middleware(['auth']);
 
 Route::resource('blogs', BlogController::class)->only('index', 'create', 'store', 'edit', 'update', 'destroy')->middleware(['auth']);
 

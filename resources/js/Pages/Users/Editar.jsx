@@ -35,7 +35,7 @@ export default function Crear({
     const dataUser = document.getElementById("dataUser");
     const showDataClient = () => {
         dataUser.innerHTML = `
-        <div class="w-75 m-auto bg-dark p-2 py-3 rounded-3 shadow">
+        <div class="w-100 m-auto bg-dark p-2 py-3 rounded-3 shadow">
             <p class="w-100 p-2 mb-3 bg-white rounded-3 fw-bold"> ${company[0].name}</p>
             <p class="w-100 p-2 mb-3 bg-white rounded-3 fw-bold"> ${company[0].address}</p>
             <p class="w-100 p-2 mb-3 bg-white rounded-3 fw-bold"> ${company[0].phone}</p>
@@ -45,7 +45,7 @@ export default function Crear({
 
     const showDataEmployee = () => {
         dataUser.innerHTML = `
-        <div class="w-75 m-auto bg-warning p-2 py-3 rounded-3 shadow">
+        <div class="w-100 m-auto bg-warning p-2 py-3 rounded-3 shadow">
             <p class="w-100 p-2 mb-3 bg-white rounded-3 fw-bold"> ${employee[0].name}</p>
             <p class="w-100 p-2 mb-3 bg-white rounded-3 fw-bold"> ${employee[0].address}</p>
             <p class="w-100 p-2 mb-3 bg-white rounded-3 fw-bold"> ${employee[0].phone}</p>
@@ -57,19 +57,20 @@ export default function Crear({
         <AuthenticatedLayout user={auth.user} header={"Edit users"}>
             <Head title="Users" />
 
-            <div className="w-100 p-5">
-                <div className="d-flex">
-                    <form onSubmit={submit} className="w-50">
+            <div className="cont-global-users">
+                <div className="cont-user-edit">
+                    <form onSubmit={submit} className="form-user-edit">
                         <h3 className="text-center">User Register</h3>
                         <div className="">
                             <FloatingLabel
                                 controlId="floatingName"
-                                label="Name"
                                 className="mb-3"
+                                label="Name"
                             >
                                 <Form.Control
                                     type="text"
                                     className="form-order-input w-100 bg-secondary bg-white border-none text-black rounded-3 py-0"
+                                    placeholder="Name"
                                     value={data.name}
                                     onChange={(e) =>
                                         setData("name", e.target.value)
@@ -80,7 +81,6 @@ export default function Crear({
 
                             <FloatingLabel
                                 controlId="floatingEmail"
-                                label="Email"
                                 className="mb-3"
                             >
                                 <Form.Control
@@ -131,7 +131,6 @@ export default function Crear({
 
                             <FloatingLabel
                                 controlId="floatingSelect"
-                                label="Roles"
                                 className="mb-3"
                             >
                                 <Form.Select
@@ -142,6 +141,7 @@ export default function Crear({
                                         setData("roles", e.target.value)
                                     }
                                 >
+                                    <option disabled>Role</option>
                                     {roles.map((item) => (
                                         <option key={item.id} value={item.name}>
                                             {item.name}
@@ -150,29 +150,35 @@ export default function Crear({
                                 </Form.Select>
                             </FloatingLabel>
                         </div>
-                        <Button type="submit" className="mt-2">
-                            GENERATE USER
+                        <Button
+                            type="submit"
+                            className="mt-2 w-50 bg-success fw-bold border-success fs-5"
+                        >
+                            Save Changes
                         </Button>
                     </form>
 
-                    <div className="w-50">
-                        <div className="m-auto w-75 d-flex justify-between mb-1">
+                    <div className="cont-user-detail">
+                        <div
+                            className="m-auto w-100 d-flex justify-around
+                         mb-1"
+                        >
                             <Button
                                 className="bg-dark border-dark fw-bold"
                                 style={{ widht: "45%" }}
                                 onClick={showDataClient}
                             >
-                                Client's company
+                                Client's info
                             </Button>
                             <Button
                                 className="bg-warning border-warning fw-bold"
                                 style={{ widht: "45%" }}
                                 onClick={showDataEmployee}
                             >
-                                Company's employee
+                                Employee's info
                             </Button>
                         </div>
-                        <div id="dataUser" className=""></div>
+                        <div id="dataUser" className="dataUser"></div>
                     </div>
                 </div>
             </div>

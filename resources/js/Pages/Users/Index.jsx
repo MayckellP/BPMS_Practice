@@ -11,6 +11,7 @@ export default function Index({ auth, users, relation, roles }) {
     console.log("Users: ", users.data);
     console.log("Roles: ", roles);
     console.log("Relation: ", relation);
+    const roleName = JSON.parse(sessionStorage.getItem("currentUser")).rolename;
     var rolesArray = [""];
     var countRole = 0;
     var currentUser = {};
@@ -33,9 +34,13 @@ export default function Index({ auth, users, relation, roles }) {
             <Head title="Users" />
 
             <div className="cont-global-users">
+                <div class="alert alert-warning" role="alert">
+                    Verify that all users have their respective roles: " - Edit
+                    - Assign Role".
+                </div>
                 <div className="cont-btns-users">
-                    {JSON.parse(sessionStorage.getItem("currentUser"))
-                        .rolename === "Administrador" && (
+                    {(roleName === "Administrador" ||
+                        auth.user.email === "admin@hotmail.com") && (
                         <ButonCreate
                             styleBtn="w-50 m-1"
                             styleLink="fs-4 text-white fw-bold text-decoration-none"
@@ -44,8 +49,8 @@ export default function Index({ auth, users, relation, roles }) {
                         />
                     )}
 
-                    {JSON.parse(sessionStorage.getItem("currentUser"))
-                        .rolename === "Administrador" && (
+                    {(roleName === "Administrador" ||
+                        auth.user.email === "admin@hotmail.com") && (
                         <ButonCreate
                             styleBtn="w-50 m-1 bg-warning border-0"
                             styleLink="fs-4 text-white fw-bold text-decoration-none"
@@ -110,18 +115,6 @@ export default function Index({ auth, users, relation, roles }) {
                     </Table>
                 </div>
             </div>
-
-            {/* <div className="py-12">
-                <div className="max-w-10xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-gray-900 d-flex justify-content-between w-100">
-                        </div>
-                        <div className="p-6 text-gray-900 ">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div> */}
         </AuthenticatedLayout>
     );
 }

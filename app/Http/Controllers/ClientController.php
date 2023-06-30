@@ -40,7 +40,6 @@ class ClientController extends Controller
                 'name' => 'required',
                 'phone' => 'required',
                 'address' => 'required',
-                'logo' => 'required',
             ]); 
     
             $request->user()->companies()->create($validated);

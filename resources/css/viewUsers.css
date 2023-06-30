@@ -16,15 +16,47 @@
     height: 80%;
     overflow: scroll;
 }
-.cont-user-table::-webkit-scrollbar {
+.form-user-edit {
+    width: 50%;
+}
+.cont-user-edit {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+    overflow: scroll;
+}
+.cont-user-detail {
+    width: 45%;
+    margin-top: 2rem;
+}
+
+.cont-user-table::-webkit-scrollbar,
+.cont-user-edit::-webkit-scrollbar {
     display: none;
 }
-.cont-user-table {
+.cont-user-table,
+.cont-user-edit {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }
 
 @media (max-width: 800px) {
+    .cont-user-edit {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .form-user-edit {
+        width: 100%;
+    }
+    .cont-user-detail {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .dataUser {
+        width: 100%;
+    }
     .cont-btns-users {
         padding: 1rem;
         width: 100%;

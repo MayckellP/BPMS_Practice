@@ -11,7 +11,6 @@ export default function Dashboard({ auth }) {
         name: "",
         phone: "",
         address: "",
-        logo: "",
     });
     const submit = (e) => {
         console.log("POST:  ", data);
@@ -19,26 +18,20 @@ export default function Dashboard({ auth }) {
         post(route("clients.store"));
     };
     return (
-        <AuthenticatedLayout
-            user={auth.user}
-            header={
-                <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    Company Register
-                </h2>
-            }
-        >
+        <AuthenticatedLayout user={auth.user} header={"Company Register"}>
             <Head title="Dashboard" />
 
-            <div className="py-12">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div className="p-3">
+                <div className="">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900">
-                            <h2>Bienvenido!</h2>
+                            <h2>Welcome!</h2>
                             <p>
-                                Al ser un usuario nuevo, porfavor rellene el
-                                siguiente formulario sobre su emppresa:{" "}
+                                If you are a new user, please fill in the
+                                following form about your company. following
+                                form about your company:
                             </p>
-                            <div className="w-50">
+                            <div className="w-75">
                                 <form onSubmit={submit}>
                                     <div className="">
                                         <FloatingLabel
@@ -92,25 +85,6 @@ export default function Dashboard({ auth }) {
                                                 onChange={(e) =>
                                                     setData(
                                                         "address",
-                                                        e.target.value
-                                                    )
-                                                }
-                                            />
-                                        </FloatingLabel>
-
-                                        <FloatingLabel
-                                            controlId="floatingPasswordConfirm"
-                                            label="Logo"
-                                            className="mb-3"
-                                        >
-                                            <Form.Control
-                                                type="text"
-                                                aria-label="Floating label select example"
-                                                className="form-order-input w-100 bg-secondary bg-white border-none text-black rounded-3 py-0"
-                                                value={data.logo}
-                                                onChange={(e) =>
-                                                    setData(
-                                                        "logo",
                                                         e.target.value
                                                     )
                                                 }

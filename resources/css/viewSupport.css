@@ -1,0 +1,358 @@
+.bg-view-support {
+    background: URL("/images/icons/support-background.svg") no-repeat right;
+    width: 100%;
+    height: 100%;
+}
+
+.cont-support {
+    width: 100;
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+}
+.cont-left-support {
+    width: 55%;
+    height: 100%;
+    padding: 1.5rem;
+}
+.cont-right-support {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-right-support img {
+    width: 90%;
+}
+.cont-title-support {
+    margin-top: 2rem;
+    width: 35%;
+}
+.cont-title-support h2 {
+    font-size: 45px;
+    font-family: "Sen", sans-serif;
+}
+.cont-full-time {
+    display: flex;
+}
+.cont-full-time h3 {
+    font-size: 75px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    margin-right: 1rem;
+    /* font-family: "Sen", sans-serif; */
+}
+.cont-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.cont-contact span {
+    font-weight: bold;
+    font-size: 20px;
+}
+.cont-info-github {
+    width: 50%;
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.cont-info-github span {
+    font-size: 20px;
+}
+.cont-info-github a {
+    background-color: #461160;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    width: 50%;
+    padding: 0.2rem;
+    margin-top: 1.5rem;
+    border-radius: 50px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.cont-info-github a i {
+    margin-right: 10px;
+}
+.cont-info-github a span {
+    font-size: 19px;
+    font-family: "Sen", sans-serif;
+}
+.cont-info-github a:hover {
+    color: white;
+}
+.cont-info-github a:active {
+    color: white;
+    box-shadow: none;
+}
+.cont-full-time-mobile {
+    display: none;
+}
+@media (max-width: 1600px) {
+    .bg-view-support {
+        background: URL("/images/icons/support-bg-2.svg") no-repeat right;
+    }
+    .cont-title-support {
+        margin-top: 4rem;
+        width: 50%;
+    }
+    /* .cont-full-time {
+        margin-top: 3rem;
+    } */
+    .cont-full-time h3 {
+        font-size: 55px;
+    }
+    .cont-info-github a {
+        width: 75%;
+    }
+}
+@media (max-width: 1350px) {
+    .bg-view-support {
+        background: URL("/images/icons/support-bg-3.svg") no-repeat right;
+        background-size: 100%;
+    }
+    .cont-title-support {
+        margin-top: 4rem;
+        width: 60%;
+    }
+    .cont-full-time h3 {
+        font-size: 45px;
+    }
+    .cont-info-github a {
+        width: 95%;
+    }
+}
+@media (max-width: 1050px) {
+    .bg-view-support {
+        background: URL("/images/icons/support-bg-4.svg") no-repeat right;
+        background-size: 100%;
+        background-position: 10rem;
+    }
+    .cont-info-github a {
+        width: 100%;
+    }
+    .cont-info-github a span {
+        font-size: 15px;
+        font-family: "Sen", sans-serif;
+    }
+}
+@media (max-width: 800px) {
+    .cont-full-time,
+    .cont-title-support {
+        display: none;
+    }
+    .bg-view-support {
+        background: URL("/images/icons/support-bg-mobile-3.svg") no-repeat right;
+        background-size: 90%;
+    }
+    .cont-left-support {
+        width: 50%;
+        height: 100%;
+        padding: 0.5rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .cont-info-github a {
+        width: 100%;
+    }
+    .cont-info-github a span {
+        font-size: 15px;
+        font-family: "Sen", sans-serif;
+    }
+    .cont-right-support {
+        width: 50%;
+        flex-direction: column;
+        padding-bottom: 8rem;
+    }
+    .cont-right-support img {
+        width: 70%;
+    }
+    .cont-full-time-mobile {
+        display: inherit;
+        display: flex;
+        flex-direction: column;
+    }
+    .cont-title-support-mobile h2 {
+        margin-top: 1rem;
+        font-size: 25px;
+        color: white;
+        text-align: center;
+        font-family: "Sen", sans-serif;
+    }
+    .time-support {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    .cont-full-time-mobile h3 {
+        font-size: 50px;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+        margin-right: 10px;
+    }
+    .time-support span {
+        font-size: 25px;
+        color: white;
+        font-weight: bold;
+    }
+    .cont-contact {
+        margin-top: 0.5rem;
+        color: white;
+    }
+
+    .cont-info-github {
+        width: 100%;
+        margin-top: 2.5rem;
+        display: flex;
+        flex-direction: column;
+    }
+    .cont-info-github span {
+        font-size: 20px;
+    }
+    .cont-info-github a {
+        background-color: #461160;
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+        width: 100%;
+        padding: 0.2rem;
+        margin-top: 1.5rem;
+        border-radius: 50px;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .cont-info-github a i {
+        margin-right: 10px;
+    }
+    .cont-info-github a span {
+        font-size: 19px;
+        font-family: "Sen", sans-serif;
+    }
+}
+@media (max-width: 650px) {
+    .cont-full-time,
+    .cont-title-support {
+        display: none;
+    }
+    .bg-view-support {
+        background: URL("/images/icons/support-bg-mobile.svg") no-repeat right;
+        background-size: 100%;
+    }
+    .cont-left-support {
+        width: 50%;
+    }
+    .cont-info-github a span {
+        font-size: 15px;
+        font-family: "Sen", sans-serif;
+    }
+    .cont-right-support {
+        width: 50%;
+    }
+    .cont-right-support img {
+        width: 100%;
+    }
+    .cont-title-support-mobile h2 {
+        font-size: 20px;
+        text-align: left;
+    }
+    .cont-full-time-mobile h3 {
+        font-size: 40px;
+    }
+    .time-support span {
+        font-size: 25px;
+    }
+    .cont-contact span {
+        margin-top: 0.5rem;
+        color: white;
+        font-size: 15px;
+    }
+}
+@media (max-width: 500px) {
+    .bg-view-support {
+        background: URL("/images/icons/support-bg-mobile.svg") no-repeat right;
+        background-position: 0rem 2rem;
+        background-size: 100%;
+    }
+    .cont-left-support {
+        width: 50%;
+        padding: 0.5rem 0.5rem;
+    }
+    .cont-contact span {
+        font-size: 12px;
+    }
+
+    .cont-info-github {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .cont-info-github span {
+        font-size: 15px;
+    }
+    .cont-info-github a {
+        padding: 0.2rem;
+        margin-top: 1rem;
+    }
+
+    .cont-info-github a i {
+        margin-right: 5px;
+    }
+    .cont-info-github a span {
+        font-size: 12px;
+        font-family: "Sen", sans-serif;
+    }
+}
+@media (max-width: 400px) {
+    .bg-view-support {
+        background: URL("/images/icons/support-bg-mobile-old.svg") no-repeat;
+        background-size: 100%;
+        background-position: 0rem 4rem;
+        height: 100%;
+    }
+    .cont-left-support {
+        justify-content: flex-end;
+    }
+    .cont-left-support img {
+        display: none;
+    }
+    .cont-contact span {
+        font-size: 15px;
+    }
+}
+@media (max-width: 300px) {
+    .bg-view-support {
+        background: URL("/images/icons/support-bg-mobile-old.svg") no-repeat;
+        background-size: 100% 100%;
+        background-position: 0rem 3rem;
+    }
+    .cont-left-support {
+        width: 50%;
+        padding: 0.5rem 0.3rem;
+    }
+    .cont-info-github span {
+        font-size: 12px;
+    }
+}
+@media screen and (orientation: landscape) {
+    @media (max-width: 1200px) {
+        .bg-view-support {
+            width: 100%;
+            min-height: 1000px;
+        }
+    }
+}
