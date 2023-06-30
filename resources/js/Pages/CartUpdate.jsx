@@ -4,6 +4,9 @@ import { Head, Link, useForm } from "@inertiajs/react";
 import Progress from "@/Components/Progress";
 
 export default function Dashboard({ auth, myCart }) {
+    {
+        /* ---------------------------------------------------------------------FUNCTION TO UPDATE THE LOCAL STORAGE */
+    }
     useEffect(() => {
         const timer = setTimeout(() => {
             if (

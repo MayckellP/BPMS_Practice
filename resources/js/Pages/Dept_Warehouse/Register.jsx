@@ -7,10 +7,9 @@ import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import moment from "moment";
 import SearchRegister from "@/Components/SearchRegister";
+import SearchRegisterMobile from "@/Components/SearchRegisterMobile";
 
 export default function Dashboard({ auth, myOrders, completeTable, sellerID }) {
-    console.log("My Register: ", completeTable);
-    console.log("My ID: ", sellerID);
     const [filteredData, setFilteredData] = useState(completeTable);
 
     const goToSearch = (e) => {
@@ -69,9 +68,7 @@ export default function Dashboard({ auth, myOrders, completeTable, sellerID }) {
         idTable++
     );
 
-    useEffect(() => {
-        console.log("estado inicial: ", filteredData);
-    });
+    useEffect(() => {});
     return (
         <AuthenticatedLayout user={auth.user} header={"Register"}>
             <Head title="Register" />
@@ -127,24 +124,7 @@ export default function Dashboard({ auth, myOrders, completeTable, sellerID }) {
                             </div>
                         </div>
 
-                        <div className="register-cont-search-mobile">
-                            <FloatingLabel
-                                controlId="floatingInput"
-                                label="Search Product"
-                                className="register-search-input-mobile"
-                            >
-                                <Form.Control
-                                    type="text"
-                                    className="register-search-text-mobile h-100"
-                                />
-                            </FloatingLabel>
-                            <Button className="register-cont-lupe-mobile">
-                                <img
-                                    src="/images/icons/lupe.svg"
-                                    alt="searcher"
-                                />
-                            </Button>
-                        </div>
+                        <SearchRegisterMobile onSearch={goToSearch} />
                     </div>
                 </div>
                 <div className="cont-table-register">

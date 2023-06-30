@@ -14,7 +14,6 @@ export default function RegisterDetail({ auth, completeTable, orderDetailID }) {
         }
     });
 
-    console.log("OrderDetail: ", orderDetail);
     return (
         <AuthenticatedLayout user={auth.user} header={"Register Details"}>
             <Head title="Register Details" />

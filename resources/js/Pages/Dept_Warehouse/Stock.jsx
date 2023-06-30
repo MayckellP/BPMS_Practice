@@ -103,9 +103,7 @@ export default function Dashboard({ auth, myStock }) {
         idTable++
     );
 
-    useEffect(() => {
-        console.log("estado inicial: ", filteredData);
-    });
+    useEffect(() => {});
     return (
         <AuthenticatedLayout user={auth.user} header={"Stock"}>
             <Head title="Register" />

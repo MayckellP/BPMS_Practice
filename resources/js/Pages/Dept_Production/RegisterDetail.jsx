@@ -13,7 +13,6 @@ export default function RegisterDetail({
 }) {
     var identifier = "register";
     const orderDetail = [];
-    console.log("TABLA COMPLETA: ", allCompleteTable);
     allCompleteTable.map((item) => {
         if (item.id == orderDetailID) {
             orderDetail.push(item);
@@ -32,8 +31,6 @@ export default function RegisterDetail({
         });
     });
 
-    console.log("OrderDetail: ", orderDetail);
-    console.log("Data employee: ", employees);
     return (
         <AuthenticatedLayout user={auth.user} header={"Register Details"}>
             <Head title="Register Details" />

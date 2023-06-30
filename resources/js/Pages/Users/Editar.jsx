@@ -14,12 +14,6 @@ export default function Crear({
     company,
     employee,
 }) {
-    console.log("userRole: ", userRole);
-    console.log("Company: ", company);
-    console.log("user: ", user);
-    console.log("roles: ", roles);
-    console.log(roles.length);
-
     const { data, setData, put, processing, errors, reset } = useForm({
         name: user.name,
         email: user.email,
@@ -28,10 +22,13 @@ export default function Crear({
         roles: "",
     });
     const submit = (e) => {
-        console.log("POST:  ", data);
         e.preventDefault();
         put(route("users.update", user.id));
     };
+
+    {
+        /* ---------------------------------------------------------------------FUNCTION TO SHOW USERS INFO */
+    }
     const dataUser = document.getElementById("dataUser");
     const showDataClient = () => {
         dataUser.innerHTML = `
@@ -60,6 +57,7 @@ export default function Crear({
             <div className="cont-global-users">
                 <div className="cont-user-edit">
                     <form onSubmit={submit} className="form-user-edit">
+                        {/* ---------------------------------------------------------------------FORM TO EDIT USER */}
                         <h3 className="text-center">User Register</h3>
                         <div className="">
                             <FloatingLabel
@@ -141,7 +139,7 @@ export default function Crear({
                                         setData("roles", e.target.value)
                                     }
                                 >
-                                    <option disabled>Role</option>
+                                    <option>Role</option>
                                     {roles.map((item) => (
                                         <option key={item.id} value={item.name}>
                                             {item.name}

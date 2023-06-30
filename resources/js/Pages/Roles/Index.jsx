@@ -6,9 +6,6 @@ import { Button } from "react-bootstrap";
 
 export default function Index({ auth, roles, permisos }) {
     const rolesArray = roles;
-    console.log("Roles: ", rolesArray);
-    console.log("permisos: ", permisos);
-
     const showRoles = rolesArray.data.map((item) => (
         <tr key={item.id}>
             <td>{item.name}</td>
@@ -40,7 +37,7 @@ export default function Index({ auth, roles, permisos }) {
         <AuthenticatedLayout user={auth.user} header={"Roles"}>
             <Head title="Roles" />
 
-            <div className="p-5">
+            <div className="p-2">
                 <div className="">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-2 text-gray-900">

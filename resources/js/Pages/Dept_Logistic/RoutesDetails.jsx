@@ -8,9 +8,6 @@ import ModalProductDelivered from "@/Components/ModalProductDelivered";
 
 export default function EmployeeDetails({ auth, routesCount, routes }) {
     const roleName = JSON.parse(sessionStorage.getItem("currentUser")).rolename;
-    console.log("autos para los envios: ", routesCount);
-    console.log("detalles de las rutas: ", routes);
-
     var clientPoint = [];
     var newRoutes = [...routes].reverse();
 

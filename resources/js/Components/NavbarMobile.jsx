@@ -270,7 +270,7 @@ function NavbarMobile(props) {
                                         </li>
                                         <li>
                                             <NavLink
-                                                href={"#"}
+                                                href={route("support.index")}
                                                 className="link-navbar"
                                             >
                                                 <img
@@ -279,21 +279,6 @@ function NavbarMobile(props) {
                                                 />
                                                 Support
                                             </NavLink>
-                                        </li>
-                                        <li>
-                                            {props.roleName ===
-                                                "Administrador" && (
-                                                <NavLink
-                                                    href={route("users.index")}
-                                                    className="link-navbar"
-                                                >
-                                                    <img
-                                                        src="/images/icons/Navbar/track.svg"
-                                                        alt="Phrase_Login"
-                                                    />
-                                                    Users
-                                                </NavLink>
-                                            )}
                                         </li>
                                     </ul>
                                 </div>

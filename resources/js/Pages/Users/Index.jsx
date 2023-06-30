@@ -7,21 +7,14 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 export default function Index({ auth, users, relation, roles }) {
-    console.log("UserId Current: ", auth.user.id);
-    console.log("Users: ", users.data);
-    console.log("Roles: ", roles);
-    console.log("Relation: ", relation);
     const roleName = JSON.parse(sessionStorage.getItem("currentUser")).rolename;
     var rolesArray = [""];
-    var countRole = 0;
-    var currentUser = {};
 
     users.data.map((item) => {
         relation.map((relationItem) => {
             if (relationItem.model_id === item.id) {
                 roles.map((type) => {
                     if (type.id === relationItem.role_id) {
-                        console.log("Usuario con Role: ", type.name);
                         rolesArray.push(type.name);
                     }
                 });
@@ -34,11 +27,13 @@ export default function Index({ auth, users, relation, roles }) {
             <Head title="Users" />
 
             <div className="cont-global-users">
+                {/* ---------------------------------------------------------------------ALERT */}
                 <div class="alert alert-warning" role="alert">
                     Verify that all users have their respective roles: " - Edit
                     - Assign Role".
                 </div>
                 <div className="cont-btns-users">
+                    {/* ---------------------------------------------------------------------BUTTONS */}
                     {(roleName === "Administrador" ||
                         auth.user.email === "admin@hotmail.com") && (
                         <ButonCreate
@@ -60,6 +55,7 @@ export default function Index({ auth, users, relation, roles }) {
                     )}
                 </div>
                 <div className="cont-user-table">
+                    {/* ---------------------------------------------------------------------USERS TABLE */}
                     <Table striped bordered hover>
                         <thead>
                             <tr>

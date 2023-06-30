@@ -6,8 +6,6 @@ import InputError from "@/Components/InputError";
 import Button from "react-bootstrap/Button";
 
 export default function Crear({ auth, roles }) {
-    console.log(roles);
-
     const { data, setData, post, processing, errors, reset } = useForm({
         name: "",
         email: "",
@@ -20,7 +18,6 @@ export default function Crear({ auth, roles }) {
         phone: "",
     });
     const submit = (e) => {
-        console.log(data);
         e.preventDefault();
         post(route("users.store"), { onSuccess: () => reset() });
     };
@@ -32,6 +29,7 @@ export default function Crear({ auth, roles }) {
                 <div className="">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="">
+                            {/* ---------------------------------------------------------------------FORM TO CREATE USER */}
                             <form
                                 onSubmit={submit}
                                 method="post"
@@ -146,14 +144,14 @@ export default function Crear({ auth, roles }) {
                                                 type="select"
                                                 aria-label="Floating label select example"
                                                 className="form-order-input w-100 bg-secondary bg-white border-none text-black rounded-3 py-0"
-                                                onClick={(e) =>
+                                                onChange={(e) =>
                                                     setData(
                                                         "roles",
                                                         e.target.value
                                                     )
                                                 }
                                             >
-                                                <option disabled>Role</option>
+                                                <option>Role</option>
                                                 {roles.map((item) => (
                                                     <option
                                                         key={item.id}
@@ -175,14 +173,14 @@ export default function Crear({ auth, roles }) {
                                                 type="select"
                                                 aria-label="Floating label select example"
                                                 className="form-order-input w-100 bg-secondary bg-white border-none text-black rounded-3 py-0"
-                                                onClick={(e) =>
+                                                onChange={(e) =>
                                                     setData(
                                                         "area",
                                                         e.target.value
                                                     )
                                                 }
                                             >
-                                                <option disabled>Area</option>
+                                                <option>Area</option>
                                                 <option
                                                     value={"sales_department"}
                                                 >
@@ -220,16 +218,14 @@ export default function Crear({ auth, roles }) {
                                                 type="select"
                                                 aria-label="Floating label select example"
                                                 className="form-order-input w-100 bg-secondary bg-white border-none text-black rounded-3 py-0"
-                                                onClick={(e) =>
+                                                onChange={(e) =>
                                                     setData(
                                                         "job_position",
                                                         e.target.value
                                                     )
                                                 }
                                             >
-                                                <option disabled>
-                                                    Job Position
-                                                </option>
+                                                <option>Job Position</option>
                                                 <option value={"supervisor"}>
                                                     Supervisor
                                                 </option>

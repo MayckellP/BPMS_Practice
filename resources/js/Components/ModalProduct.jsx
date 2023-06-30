@@ -97,7 +97,7 @@ function ModalProduct(props) {
                                         aria-label="Floating label select example"
                                         className="form-order-input w-100 bg-secondary bg-white border-none text-black rounded-3 py-0 mt-2"
                                         style={{ height: "2.5rem" }}
-                                        onClick={clicked}
+                                        onChange={clicked}
                                         required
                                     >
                                         <option>Select color</option>
@@ -118,7 +118,7 @@ function ModalProduct(props) {
                                                 aria-label="Floating label select example"
                                                 className="form-order-input w-100 bg-secondary bg-white border-none text-black rounded-3 py-0 mt-2"
                                                 style={{ height: "2.5rem" }}
-                                                onClick={(e) =>
+                                                onChange={(e) =>
                                                     setData(
                                                         "auxiliar_user",
                                                         e.target.value

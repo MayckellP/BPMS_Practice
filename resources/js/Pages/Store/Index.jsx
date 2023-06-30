@@ -6,7 +6,6 @@ import ButonCreate from "@/Components/ButtonCreate";
 
 export default function Dashboard({ auth, myCart }) {
     //-------------------------------FUNCTION TO SHOW ORDERS IN TABLE (JAVASSCRIPT / HTML)
-    console.log("My Carts: ", myCart);
     const showCarts = myCart.map((item) => (
         <tr key={item.id}>
             <td>{item.product}</td>

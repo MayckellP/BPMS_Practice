@@ -25,7 +25,6 @@ export default function UpdateProfileFoto({ className = "" }) {
         reader.onload = () => {
             const imgUrl = reader.result;
             setImage(imgUrl);
-            console.log(event.target.files);
         };
 
         reader.readAsDataURL(file);
@@ -34,7 +33,6 @@ export default function UpdateProfileFoto({ className = "" }) {
 
     const submit = (e) => {
         e.preventDefault();
-        console.log(data);
 
         post(route("profile.addImage"));
     };

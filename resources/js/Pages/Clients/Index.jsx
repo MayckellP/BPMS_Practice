@@ -13,7 +13,6 @@ export default function Dashboard({ auth }) {
         address: "",
     });
     const submit = (e) => {
-        console.log("POST:  ", data);
         e.preventDefault();
         post(route("clients.store"));
     };

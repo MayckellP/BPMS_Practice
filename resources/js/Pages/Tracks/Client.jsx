@@ -24,8 +24,6 @@ export default function Index({ auth, myOrdersTrack }) {
     const proccessCount = JSON.parse(sessionStorage.getItem("proccess"));
     //SHOW AND HIDE EVERY OPTION CHAT
 
-    console.log("My Orders: ", myOrdersTrack);
-
     const [selectedTrack, setSelectedTrack] = useState(false);
 
     const [selectedTrackCompany, setSelectedTrackCompany] = useState(false);
@@ -71,14 +69,10 @@ export default function Index({ auth, myOrdersTrack }) {
         channel.bind("globalTrack-message", function (data) {
             //alert(JSON.stringify(data));
             const newData = Object.entries(data);
-            console.log("PUSHER DATA: ", newData[0][1]);
-
-            console.log("NEW PUSHER DATA: ", newData);
             setFilteredData(newData[0][1]);
         });
     }, []);
 
-    console.log("saber que trae: ", selectedTrack);
     return (
         <AuthenticatedLayout user={auth.user} header={"Track"}>
             <Head title="Chat" />

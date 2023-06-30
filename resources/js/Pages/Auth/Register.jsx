@@ -180,7 +180,7 @@ export default function Register() {
                     <div className="bg-top-register">
                         <div className="cont-img-megaf">
                             <img
-                                src="/images/0.log_view/Megafortris-logo.svg"
+                                src="/images/0.log_view/JustLogo.svg"
                                 alt="Phrase_Login"
                             />
                         </div>

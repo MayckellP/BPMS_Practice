@@ -11,35 +11,9 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }
-.cont-btns-users {
-    margin: auto;
-    padding: 1rem;
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-}
-.cont-user-table {
-    margin-top: 1rem;
-    width: 100%;
-    height: 80%;
-    overflow: scroll;
-}
-.cont-user-table::-webkit-scrollbar {
-    display: none;
-}
-.cont-user-table {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-}
 
 @media (max-width: 800px) {
-    .cont-btns-users {
-        padding: 1rem;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    s .register-cont-search-mobile,
+    .register-cont-search-mobile,
     .select-register-mobile {
         display: inherit;
     }

@@ -12,6 +12,9 @@ export default function Dashboard({
     myCart,
     proccess,
 }) {
+    {
+        /* ---------------------------------------------------------------------FUNCTION TO KNOW THE USER ROLE */
+    }
     useEffect(() => {
         const roleName = JSON.parse(
             sessionStorage.getItem("currentUser")

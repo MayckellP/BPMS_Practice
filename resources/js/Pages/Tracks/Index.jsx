@@ -35,12 +35,8 @@ export default function Index({
         sessionStorage.getItem("currentUser")
     ).rolename;
 
-    console.log("PROCCESS: ", proccess);
     //SHOW MY ROLENAME
     const roleName = JSON.parse(sessionStorage.getItem("currentUser")).rolename;
-
-    console.log("My Friends: ", myFriends);
-    console.log("Company Clients: ", allClients);
 
     //SHOW AND HIDE EVERY OPTION CHAT
 
@@ -89,12 +85,10 @@ export default function Index({
         channel.bind("globalTrack-message", function (data) {
             //alert(JSON.stringify(data));
             const newData = Object.entries(data);
-            console.log("PUSHER DATA: ", newData[0][1]);
             setFilteredData(newData[0][1]);
         });
     }, []);
 
-    console.log("saber que trae: ", selectedTrack);
     return (
         <AuthenticatedLayout user={auth.user} header={"Track"}>
             <Head title="Chat" />

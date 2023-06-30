@@ -15,10 +15,6 @@ export default function Index({
     myId,
     totalTrack,
 }) {
-    console.log("ORDERS: ", myOrders);
-    console.log("TOTAL TRACKS: ", totalTrack);
-    console.log("CLAIMS: ", myClaims);
-    console.log("REQUEST: ", myId);
     var countClaim = 0;
     var countSolution = 0;
 
@@ -30,8 +26,6 @@ export default function Index({
             }
         }
     });
-    console.log(countClaim);
-    console.log(countSolution);
 
     //-------------------------------CHARTJS
 

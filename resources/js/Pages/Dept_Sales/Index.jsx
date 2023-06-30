@@ -9,11 +9,6 @@ import PrimaryButton from "@/Components/PrimaryButton";
 import moment from "moment";
 
 export default function Index({ auth, filterChart, myOrders, myPerformance }) {
-    console.log("ORDERS: ", myOrders);
-    console.log("Chart: ", filterChart);
-    console.log("REQUEST: ", myPerformance);
-    console.log("REQUEST: ");
-
     //-------------------------------CHARTJS
 
     //-------------------------------DATA AND DESIGN FOR PIE CHART

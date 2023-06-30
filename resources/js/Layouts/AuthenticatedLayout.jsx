@@ -5,7 +5,6 @@ import { Link } from "@inertiajs/react";
 import ButonCreate from "@/Components/ButtonCreate";
 import Footer from "@/Components/Footer";
 import Pusher from "pusher-js";
-
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import NavbarMobile from "@/Components/NavbarMobile";
@@ -24,7 +23,6 @@ export default function Authenticated({ user, header, children }) {
         const channel = pusher.subscribe("companyTrack-channel");
         channel.bind("track-message", function (data) {
             //alert(JSON.stringify(data));
-            console.log("PUSHER DATA: ", data);
             sessionStorage.setItem("proccess", JSON.stringify(data));
             setTrack(data);
         });
@@ -145,11 +143,6 @@ export default function Authenticated({ user, header, children }) {
     } else {
         contNotify = "notify";
     }
-    /*-------------------------------------------------------------------------LOG OUT -> REMOVE CART  */
-    const removeCart = () => sessionStorage.removeItem("itemInCart");
-
-    const [showingNavigationDropdown, setShowingNavigationDropdown] =
-        useState(false);
 
     const [show, setShow] = useState(false);
 
@@ -158,8 +151,10 @@ export default function Authenticated({ user, header, children }) {
 
     return (
         <div className="bg-home">
+            {/* ---------------------------------------------------------------------NAVBAR */}
             <div className="side-navbar">
                 <div className="cont-top-navbar">
+                    {/* ---------------------------------------------------------------------NAVBAR - TOP -> IMG LOGO */}
                     <div className="cont-img-client">
                         {user.logo === null ? (
                             <img
@@ -175,6 +170,7 @@ export default function Authenticated({ user, header, children }) {
                     </div>
                 </div>
                 <div className="cont-mid-navbar">
+                    {/* ---------------------------------------------------------------------NAVBAR - MID -> LINKS */}
                     <ul>
                         <li>
                             {(roleName === "Client" ||
@@ -311,6 +307,7 @@ export default function Authenticated({ user, header, children }) {
                     </ul>
                 </div>
                 <div className="cont-bot-navbar mb-3">
+                    {/* ---------------------------------------------------------------------NAVBAR - BOT -> IMG LOGO */}
                     <div className="cont-img-logo">
                         <img
                             src="/images/0.log_view/NewLogo.svg"
@@ -319,8 +316,8 @@ export default function Authenticated({ user, header, children }) {
                     </div>
                 </div>
             </div>
-
             <div className={background} id="bg-global">
+                {/* ---------------------------------------------------------------------BODY VIEW */}
                 <NavbarMobile
                     name={user.name}
                     myCart={myNewCart}
@@ -337,6 +334,7 @@ export default function Authenticated({ user, header, children }) {
                     <header className="cont-title-view">
                         <div className="title-view">{header}</div>
                         <div className="cont-profile-cart">
+                            {/* ---------------------------------------------------------------------CART & PROFILE */}
                             <div className="cont-img-user">
                                 {user.foto === null || user.foto === "NO" ? (
                                     <img
@@ -350,12 +348,13 @@ export default function Authenticated({ user, header, children }) {
                                     />
                                 )}
                                 <span>
-                                    <Dropdown className="bg-black">
-                                        <Dropdown.Trigger className="bg-black">
-                                            <span className="bg-black">
+                                    {/* ---------------------------------------------------------------------PROFILE */}
+                                    <Dropdown>
+                                        <Dropdown.Trigger>
+                                            <span>
                                                 <button
                                                     type="button"
-                                                    className="inline-flex items-center px-2 py-2  border-transparent text-md leading-4 font-medium rounded-md text-white-500 bg-black hover:text-gray-300 focus:outline-none transition ease-in-out duration-150"
+                                                    className="inline-flex items-center px-2 py-2  border-transparent text-md leading-4 font-medium rounded-md text-white-500 hover:text-gray-300 focus:outline-none transition ease-in-out duration-150"
                                                 >
                                                     {user.name}
 
@@ -383,7 +382,6 @@ export default function Authenticated({ user, header, children }) {
                                             </Dropdown.Link>
                                             <Dropdown.Link
                                                 href={route("logout")}
-                                                /* onClick={removeCart} */
                                                 method="post"
                                                 as="button"
                                             >

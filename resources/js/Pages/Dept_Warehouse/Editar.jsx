@@ -12,7 +12,6 @@ export default function Crear({ auth, order }) {
         color: order.color,
     });
     const submit = (e) => {
-        console.log(data);
         e.preventDefault();
         put(route("orders.update", order.id));
     };

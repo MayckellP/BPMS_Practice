@@ -35,8 +35,10 @@ export default function Crear({ auth, stock, filterStock }) {
         }
     });
 
+    {
+        /* ---------------------------------------------------------------------FUNCTION TO MAKE THE TRANSITION */
+    }
     const submit = (e) => {
-        console.log(data);
         e.preventDefault();
         var content = document.getElementById("content-product");
         var allOk = document.getElementById("all-ok");
@@ -105,7 +107,7 @@ export default function Crear({ auth, stock, filterStock }) {
                                     type="select"
                                     aria-label="FloatingModel"
                                     className="form-order-input w-100 bg-secondary bg-white border-none text-black rounded-3 py-0"
-                                    onClick={clicked}
+                                    onChange={clicked}
                                     required
                                 >
                                     <option>Select Product</option>
@@ -124,7 +126,7 @@ export default function Crear({ auth, stock, filterStock }) {
                                 <Form.Select
                                     aria-label="Floating label select example"
                                     className="form-order-input w-100 bg-secondary bg-white border-none text-black rounded-3 py-0"
-                                    onClick={(e) =>
+                                    onChange={(e) =>
                                         setData("color", e.target.value)
                                     }
                                     required

@@ -7,13 +7,11 @@ import InputError from "@/Components/InputError";
 import Button from "react-bootstrap/Button";
 
 export default function Crear({ auth, permission }) {
-    console.log(typeof permission);
     const { data, setData, post, processing, errors, reset } = useForm({
         name: "",
         permission: [],
     });
     const submit = (e) => {
-        console.log(data);
         e.preventDefault();
         post(route("roles.store"), { onSuccess: () => reset() });
     };

@@ -12,8 +12,6 @@ export default function EmployeeDetails({
     employeeTable,
     employeePerformanceDetail,
 }) {
-    console.log("employeesPerformance: ", employeePerformanceDetail);
-    console.log("employees: ", employeeTable);
     //------------------------------DATA AND DESIGN FOR BAR CHART
     //DATA
     const month = [
@@ -39,7 +37,6 @@ export default function EmployeeDetails({
 
     const cardClick = (employee) => {
         setSelectedEmployee(employee);
-        console.log("funciona");
 
         const performance = [];
         var addMonthlyPerformance;
@@ -70,10 +67,7 @@ export default function EmployeeDetails({
             ],
         };
         setDataBarChart(dataBar);
-        console.log(dataBarChart);
     };
-
-    console.log("fuera de la funcion", performance);
 
     const myEmployees = employeesToProduction.map((employee, index) => (
         <Card

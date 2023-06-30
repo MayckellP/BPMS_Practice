@@ -13,10 +13,6 @@ export default function Index({
     productsSold,
     productsRequested,
 }) {
-    console.log("ORDERS: ", productsChart);
-    console.log("Chart: ", employeeChart);
-    console.log("REQUEST: ", myPerformance);
-
     //-------------------------------CHARTJS
 
     //-------------------------------DATA AND DESIGN FOR PIE CHART EMPLOYEE

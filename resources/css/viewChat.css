@@ -1018,7 +1018,7 @@
 
     .btn-show-proccess {
         background-color: #3960aa;
-        width: 90%;
+        width: 100%;
         align-self: center;
         display: flex;
         align-items: center;
@@ -1223,6 +1223,9 @@
     }
     .cont-message-track-title span {
         font-size: 15px;
+    }
+    .btn-start-proccess {
+        width: 100%;
     }
 }
 

@@ -6,25 +6,19 @@ import InputError from "@/Components/InputError";
 import Button from "react-bootstrap/Button";
 
 export default function Crear({ auth, permission, rolePermission, role }) {
-    console.log("rolePermission: ", rolePermission);
-    console.log("permission: ", permission);
-    console.log("role: ", role);
     const { data, setData, put, processing, errors, reset } = useForm({
         name: role.name,
         permission: [],
     });
     const submit = (e) => {
-        console.log(data);
         e.preventDefault();
         put(route("roles.update", role.id), { onSuccess: () => reset() });
     };
     const saveData = (e) => {
         setData("name", e.target.value);
-        console.log(e.target.value);
     };
 
     const checked = (e) => {
-        console.log(e.target);
         if (e.target.checked) {
             data.permission.push([e.target.value]);
         } else {

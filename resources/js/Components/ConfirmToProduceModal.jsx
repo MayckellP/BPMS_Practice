@@ -120,17 +120,17 @@ function ConfirmToProduceModal(props) {
 
                         <FloatingLabel
                             controlId="floatingSelect"
-                            label="Employees"
                             className="mb-3"
                         >
                             <Form.Select
                                 type="select"
                                 aria-label="Floating label select example"
-                                className="form-order-input w-100 bg-secondary bg-white border-none text-black rounded-3 py-0 text-end"
-                                onClick={(e) =>
+                                className="form-order-input w-100 bg-secondary bg-white border-none text-black rounded-3 py-0"
+                                onChange={(e) =>
                                     setData("id_employee", e.target.value)
                                 }
                             >
+                                <option>Employee</option>
                                 {Employees.map((employee, index) => (
                                     <option key={index} value={employee.id}>
                                         {employee.name}
@@ -141,17 +141,17 @@ function ConfirmToProduceModal(props) {
 
                         <FloatingLabel
                             controlId="floatingSelect"
-                            label="Activities"
                             className="mb-3"
                         >
                             <Form.Select
                                 type="select"
                                 aria-label="Floating label select example"
-                                className="form-order-input w-100 bg-secondary bg-white border-none text-black rounded-3 py-0 text-end"
-                                onClick={(e) =>
+                                className="form-order-input w-100 bg-secondary bg-white border-none text-black rounded-3 py-0"
+                                onChange={(e) =>
                                     setData("activity", e.target.value)
                                 }
                             >
+                                <option>Task</option>
                                 {activities.map((task, index) => (
                                     <option key={index} value={task}>
                                         {task}

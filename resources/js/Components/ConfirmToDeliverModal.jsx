@@ -154,15 +154,14 @@ function ConfirmToDeliverModal(props) {
                         <div className="w-100 d-flex justify-between">
                             <FloatingLabel
                                 controlId="floatingSelect"
-                                label="Driver"
                                 className="mb-3"
                                 style={{ width: "45%" }}
                             >
                                 <Form.Select
                                     type="select"
                                     aria-label="Floating label select example"
-                                    className="form-order-input w-100 bg-secondary bg-white border-none text-black rounded-3 py-0 text-end"
-                                    onClick={(e) => {
+                                    className="form-order-input w-100 bg-secondary bg-white border-none text-black rounded-3 py-0"
+                                    onChange={(e) => {
                                         setData((prevState) => ({
                                             ...prevState,
                                             id_employee: e.target.value,
@@ -170,6 +169,7 @@ function ConfirmToDeliverModal(props) {
                                         }));
                                     }}
                                 >
+                                    <option>Driver</option>
                                     {Employees.map((employee, index) => (
                                         <option key={index} value={employee.id}>
                                             {employee.name}
@@ -180,18 +180,18 @@ function ConfirmToDeliverModal(props) {
 
                             <FloatingLabel
                                 controlId="floatingSelect"
-                                label="Co-Driver"
                                 className="mb-3"
                                 style={{ width: "45%" }}
                             >
                                 <Form.Select
                                     type="select"
                                     aria-label="Floating label select example"
-                                    className="form-order-input w-100 bg-secondary bg-white border-none text-black rounded-3 py-0 text-end"
+                                    className="form-order-input w-100 bg-secondary bg-white border-none text-black rounded-3 py-0"
                                     onClick={(e) =>
                                         setData("co_driver", e.target.value)
                                     }
                                 >
+                                    <option>Co-Driver</option>
                                     {Employees.map((employee, index) => (
                                         <option key={index} value={employee.id}>
                                             {employee.name}

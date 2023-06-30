@@ -37,7 +37,6 @@ export default function Crear({ auth, stock, filterStock, clients }) {
     });
 
     const submit = (e) => {
-        console.log(data);
         e.preventDefault();
         var content = document.getElementById("content-product");
         var allOk = document.getElementById("all-ok");

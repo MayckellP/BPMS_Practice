@@ -52,11 +52,6 @@ export default function Chat({
         }
     }
 
-    //DEBUGGER
-    console.log("CHATS: ", chats);
-    console.log("My Friends: ", myFriends);
-    console.log("Company Clients: ", allClients);
-
     //SHOW MY ROLENAME
     const roleName = JSON.parse(sessionStorage.getItem("currentUser")).rolename;
 
@@ -96,7 +91,6 @@ export default function Chat({
 
     const chatClick = (myFriend) => {
         setSelectedFriend(myFriend);
-        console.log("Mi nuevo amigo: ", myFriend);
         const privateChannel = `${myEmployeeID} - ${myFriend.id}`;
         setData("channel", privateChannel);
     };
@@ -117,7 +111,6 @@ export default function Chat({
     var [companyMessageChannel, setCompanyMessageChannel] = useState();
     const [arrCount, setArrCount] = useState([]);
 
-    console.log("Veamos que sale: ", messageChannel);
     //PUSHER
     const [messages, setMessages] = useState(chats);
     useEffect(() => {
@@ -129,7 +122,6 @@ export default function Chat({
 
         const channel = pusher.subscribe("company-channel");
         channel.bind("message", function (data) {
-            console.log("PUSHER DATA: ", data);
             allMessage.push(data);
 
             setMessages((prevMessages) => [...prevMessages, data]);
@@ -144,7 +136,6 @@ export default function Chat({
     });
 
     const submit = (e) => {
-        console.log(data);
         post(route("chat.store"));
         e.preventDefault();
         setData("message", "");
@@ -258,7 +249,7 @@ export default function Chat({
                                                 >
                                                     <div className="cont-chat-foto my-2">
                                                         {myFriend.foto ===
-                                                        "NO" ? (
+                                                        null ? (
                                                             <img
                                                                 src="/images/profile_img/profile_default.jpg"
                                                                 alt="Photo User"
@@ -342,7 +333,7 @@ export default function Chat({
                                                 <div className="cont-message-foto">
                                                     <div className="foto-img">
                                                         {auth.user.foto ===
-                                                        "NO" ? (
+                                                        null ? (
                                                             <img
                                                                 src="/images/profile_img/profile_default.jpg"
                                                                 alt="Photo User"
@@ -377,7 +368,7 @@ export default function Chat({
                                                 <div className="cont-message-foto">
                                                     <div className="foto-img">
                                                         {selectedFriend.foto ===
-                                                        "NO" ? (
+                                                        null ? (
                                                             <img
                                                                 src="/images/profile_img/profile_default.jpg"
                                                                 alt="Photo User"
@@ -481,7 +472,7 @@ export default function Chat({
                                                 <div className="cont-message-foto">
                                                     <div className="foto-img">
                                                         {auth.user.foto ===
-                                                        "NO" ? (
+                                                        null ? (
                                                             <img
                                                                 src="/images/profile_img/profile_default.jpg"
                                                                 alt="Photo User"
@@ -520,7 +511,7 @@ export default function Chat({
                                                             <div className="cont-message-foto">
                                                                 <div className="foto-img">
                                                                     {employee.foto ===
-                                                                    "NO" ? (
+                                                                    null ? (
                                                                         <img
                                                                             src="/images/profile_img/profile_default.jpg"
                                                                             alt="Photo User"

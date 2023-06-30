@@ -11,10 +11,6 @@ export default function Index({
     productsChart,
     myPerformance,
 }) {
-    console.log("ORDERS: ", productsChart);
-    console.log("Chart: ", employeeChart);
-    console.log("REQUEST: ", myPerformance);
-
     //-------------------------------CHARTJS
 
     //-------------------------------DATA AND DESIGN FOR PIE CHART PRODUCTS
@@ -56,7 +52,12 @@ export default function Index({
                             </h2>
                         </div>
                         <div className="subCont-chart-logistic">
-                            {/* <EmployeePerformance data={dataPie} /> */}
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2701.7469127821605!2d8.5403226!3d47.377857899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47900a08cc0e6e41%3A0xf5c698b65f8c52a7!2sZurich%20HB!5e0!3m2!1ses-419!2sch!4v1688121380531!5m2!1ses-419!2sch"
+                                allowFullScreen=""
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                            ></iframe>
                         </div>
                     </div>
                 </div>
