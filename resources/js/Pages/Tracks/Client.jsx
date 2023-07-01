@@ -190,7 +190,7 @@ export default function Index({ auth, myOrdersTrack }) {
                         <div className="cont-chatDetails">
                             <div className="trackDetails-top">
                                 <Link
-                                    href={route("track.index")}
+                                    href={route("track.show", auth.user.id)}
                                     className="cont-back-chat"
                                 >
                                     <img
