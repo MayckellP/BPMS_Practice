@@ -99,6 +99,8 @@ export default function Authenticated({ user, header, children }) {
         } else {
             notifyProccess = "d-none";
         }
+    } else {
+        linkHome = route("clients.index");
     }
 
     /*-------------------------------------------------------------------------CART SHOP  */
@@ -173,12 +175,7 @@ export default function Authenticated({ user, header, children }) {
                     {/* ---------------------------------------------------------------------NAVBAR - MID -> LINKS */}
                     <ul>
                         <li>
-                            {(roleName === "Client" ||
-                                roleName === "Seller" ||
-                                roleName === "Production Manager" ||
-                                roleName === "Logistic Manager" ||
-                                roleName === "Logistic Employee" ||
-                                roleName === "Warehouse") && (
+                            {roleName !== "Administrador" && (
                                 <NavLink
                                     href={linkHome}
                                     className="link-navbar"

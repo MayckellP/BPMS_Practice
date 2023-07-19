@@ -102,6 +102,28 @@
     font-size: 30px;
     margin-top: 0.5rem;
 }
+.guide-app {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0rem;
+}
+.guide-app a {
+    text-decoration: none;
+    color: black;
+    opacity: 50%;
+    display: none;
+}
+.btn-download {
+    width: 20%;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-download:hover {
+}
 .btn-login {
     background: #389d28;
     width: 100%;

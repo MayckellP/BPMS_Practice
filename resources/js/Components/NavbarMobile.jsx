@@ -127,16 +127,8 @@ function NavbarMobile(props) {
                                 <div className="cont-mid-navbar h-75">
                                     <ul>
                                         <li>
-                                            {(props.roleName === "Client" ||
-                                                props.roleName === "Seller" ||
-                                                props.roleName ===
-                                                    "Production Manager" ||
-                                                props.roleName ===
-                                                    "Warehouse" ||
-                                                props.roleName ===
-                                                    "Logistic Manager" ||
-                                                props.roleName ===
-                                                    "Logistic Employee") && (
+                                            {props.roleName !==
+                                                "Administrador" && (
                                                 <NavLink
                                                     href={props.linkHome}
                                                     className="link-navbar"

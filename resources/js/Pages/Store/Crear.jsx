@@ -92,7 +92,7 @@ export default function Crear({
                                         className="form-order-input fs-6 w-100 bg-secondary bg-white border-none text-black rounded-3 py-0"
                                         style={{ height: "40px" }}
                                     >
-                                        <option>Security & Controls</option>
+                                        <option>Categories</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
                                         <option value="3">Three</option>
@@ -108,7 +108,7 @@ export default function Crear({
                                         className="form-order-input fs-6 w-100 bg-secondary bg-white border-none text-black rounded-3 py-0"
                                         style={{ height: "40px" }}
                                     >
-                                        <option>Load Protection</option>
+                                        <option>Filter 2</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
                                         <option value="3">Three</option>
@@ -124,7 +124,7 @@ export default function Crear({
                                         className="form-order-input fs-6 w-100 bg-secondary bg-white border-none text-black rounded-3 py-0"
                                         style={{ height: "40px" }}
                                     >
-                                        <option>Fruit Perservation</option>
+                                        <option>Filter 3</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
                                         <option value="3">Three</option>

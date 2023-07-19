@@ -3,6 +3,7 @@ import Checkbox from "@/Components/Checkbox";
 import GuestLayout from "@/Layouts/GuestLayout";
 import InputError from "@/Components/InputError";
 import InputLabel from "@/Components/InputLabel";
+import { FloatingLabel, Form } from "react-bootstrap";
 import PrimaryButton from "@/Components/PrimaryButton";
 import TextInput from "@/Components/TextInput";
 import Footer from "@/Components/Footer";
@@ -25,6 +26,28 @@ export default function Login({ status, canResetPassword }) {
         e.preventDefault();
 
         post(route("login"));
+    };
+
+    const [valuePDF, setValuePDF] = useState("Hi");
+    const activeBtnToDownload = (e) => {
+        var btnDownload = document.getElementById("btn-dwnld");
+        if (e.target.value === "") {
+            btnDownload.style.display = "none";
+        } else {
+            btnDownload.style.display = "inherit";
+            btnDownload.style.color = "green";
+            btnDownload.style.opacity = "100%";
+            setValuePDF(e.target.value);
+        }
+    };
+    const downloadGuide = () => {
+        const link = document.createElement("a");
+        const urlFile = valuePDF;
+        link.href = urlFile;
+        link.setAttribute("download", "Guide_to_use_App");
+        document.body.appendChild(link);
+        link.click();
+        link.parentNode.removeChild(link);
     };
 
     return (
@@ -103,6 +126,46 @@ export default function Login({ status, canResetPassword }) {
                                     Remember me
                                 </span>
                             </label>
+                            <div className="guide-app">
+                                <Form.Select
+                                    type="select"
+                                    aria-label="FloatingModel"
+                                    className="w-75 bg-secondary bg-white shadow-md text-black rounded-3 "
+                                    onChange={activeBtnToDownload}
+                                >
+                                    <option value="">Download guide</option>
+                                    <option
+                                        value={
+                                            "/guideToUseApp/Nutzung_und_Funktionalität_des_Projekts-DE.pdf"
+                                        }
+                                    >
+                                        German
+                                    </option>
+                                    <option
+                                        value={
+                                            "/guideToUseApp/Use_and_functionality_of_the_project-EN.pdf"
+                                        }
+                                    >
+                                        English
+                                    </option>
+                                    <option
+                                        value={
+                                            "/guideToUseApp/Uso_y_funcionalidad_del_proyecto-ES.pdf"
+                                        }
+                                    >
+                                        Spanish
+                                    </option>
+                                </Form.Select>
+                                <div className="btn-download">
+                                    <a
+                                        href="#"
+                                        id="btn-dwnld"
+                                        onClick={downloadGuide}
+                                    >
+                                        <i className="bi bi-arrow-down-circle-fill"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                         <PrimaryButton
                             className="btn-login"

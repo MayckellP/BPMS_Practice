@@ -21,6 +21,14 @@ export default function Crear({ auth, roles }) {
         e.preventDefault();
         post(route("users.store"), { onSuccess: () => reset() });
     };
+    const validatePhone = (e) => {
+        const regex = /^[0-9]+$/;
+        if (regex.test(e.target.value)) {
+            setData("phone", e.target.value);
+        } else {
+            setData("phone", " ");
+        }
+    };
     return (
         <AuthenticatedLayout user={auth.user} header={"Create users"}>
             <Head title="Users" />
@@ -269,12 +277,7 @@ export default function Crear({ auth, roles }) {
                                                 aria-label="Floating label select example"
                                                 className="form-order-input w-100 bg-secondary bg-white border-none text-black rounded-3 py-0"
                                                 value={data.phone}
-                                                onChange={(e) =>
-                                                    setData(
-                                                        "phone",
-                                                        e.target.value
-                                                    )
-                                                }
+                                                onChange={validatePhone}
                                                 required
                                             />
                                         </FloatingLabel>

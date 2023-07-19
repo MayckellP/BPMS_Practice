@@ -47,10 +47,6 @@ export default function Edit({
                 <div className="p-4 mt-3 sm:p-8 bg-white shadow sm:rounded-lg">
                     <UpdatePasswordForm className="max-w-xl" />
                 </div>
-
-                <div className="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                    <DeleteUserForm className="max-w-xl" />
-                </div>
             </div>
         </AuthenticatedLayout>
     );

@@ -12,6 +12,14 @@ export default function Dashboard({ auth }) {
         phone: "",
         address: "",
     });
+    const validatePhone = (e) => {
+        const regex = /^[0-9]+$/;
+        if (regex.test(e.target.value)) {
+            setData("phone", e.target.value);
+        } else {
+            setData("phone", " ");
+        }
+    };
     const submit = (e) => {
         e.preventDefault();
         post(route("clients.store"));
@@ -51,6 +59,10 @@ export default function Dashboard({ auth }) {
                                                 required
                                             />
                                         </FloatingLabel>
+                                        <InputError
+                                            message={errors.name}
+                                            className="mt-2"
+                                        />
 
                                         <FloatingLabel
                                             controlId="floatingEmail"
@@ -61,15 +73,14 @@ export default function Dashboard({ auth }) {
                                                 type="number"
                                                 className="form-order-input w-100 bg-secondary bg-white border-none text-black rounded-3 py-0"
                                                 value={data.phone}
-                                                onChange={(e) =>
-                                                    setData(
-                                                        "phone",
-                                                        e.target.value
-                                                    )
-                                                }
+                                                onChange={validatePhone}
                                                 required
                                             />
                                         </FloatingLabel>
+                                        <InputError
+                                            message={errors.phone}
+                                            className="mt-2"
+                                        />
 
                                         <FloatingLabel
                                             controlId="floatingPassword"
@@ -89,6 +100,10 @@ export default function Dashboard({ auth }) {
                                                 }
                                             />
                                         </FloatingLabel>
+                                        <InputError
+                                            message={errors.address}
+                                            className="mt-2"
+                                        />
                                     </div>
                                     <Button type="submit" className="mt-2">
                                         Confirm Company

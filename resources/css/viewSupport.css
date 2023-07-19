@@ -1,6 +1,6 @@
 .bg-view-support {
     background: URL("/images/icons/support-background.svg") no-repeat right;
-    width: 100%;
+    width: 87%;
     height: 100%;
 }
 
@@ -252,6 +252,7 @@
     .bg-view-support {
         background: URL("/images/icons/support-bg-mobile.svg") no-repeat right;
         background-size: 100%;
+        width: 100%;
     }
     .cont-left-support {
         width: 50%;
